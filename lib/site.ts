@@ -5,6 +5,7 @@ export const siteConfig = {
     "Documentation for Mori, the cross-platform Growtopia companion with bot management, item data, world state, and WebSocket events.",
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   githubUrl: "https://github.com/CLOEI/Mori",
+  projectGithubUrl: "https://github.com/YoruAkio/MoriDocs",
   docsUrl: "/docs",
   docsSourceUrl: "https://github.com/CLOEI/Mori/blob/main/DOCS.md",
   rawDocsUrl: "https://raw.githubusercontent.com/CLOEI/Mori/main/DOCS.md",

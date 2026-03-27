@@ -4,7 +4,7 @@ import { siteConfig } from "@/lib/site"
 
 export function baseOptions(): BaseLayoutProps {
   return {
-    githubUrl: siteConfig.githubUrl,
+    githubUrl: siteConfig.projectGithubUrl,
     nav: {
       title: <MoriWordmark />,
       url: "/",
