@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
@@ -8,6 +9,36 @@ import { Overview } from "@/components/landing/overview"
 import { buttonVariants } from "@/lib/button-variants"
 import { siteConfig } from "@/lib/site"
 import { cn } from "@/lib/utils"
+
+export const metadata: Metadata = {
+  title: siteConfig.name,
+  description:
+    "Simple Mori documentation with a focused landing page, synced API reference, and live HTTP and WebSocket docs.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: siteConfig.name,
+    description:
+      "Simple Mori documentation with a focused landing page, synced API reference, and live HTTP and WebSocket docs.",
+    url: siteConfig.siteUrl,
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: siteConfig.name,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.name,
+    description:
+      "Simple Mori documentation with a focused landing page, synced API reference, and live HTTP and WebSocket docs.",
+    images: [siteConfig.ogImage],
+  },
+}
 
 export default function Page() {
   return (
@@ -60,7 +91,6 @@ export default function Page() {
         <Overview />
       </main>
 
-      {/* Footer */}
       <footer className="w-full border-t border-border bg-card py-4">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 sm:flex-row md:px-8">
           <p className="text-[10px] font-mono tracking-wider text-muted-foreground uppercase text-center sm:text-left">

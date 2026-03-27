@@ -3,6 +3,7 @@ import { notFound } from "next/navigation"
 import { DocsBody, DocsDescription, DocsPage, DocsTitle } from "fumadocs-ui/page"
 
 import { createRelativeLink, getMDXComponents } from "@/components/mdx"
+import { siteConfig } from "@/lib/site"
 import { source } from "@/lib/source"
 
 type PageProps = {
@@ -51,5 +52,28 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${page.data.title} | Mori Docs`,
     description: page.data.description,
+    alternates: {
+      canonical: page.url,
+    },
+    openGraph: {
+      title: page.data.title,
+      description: page.data.description ?? siteConfig.description,
+      url: page.url,
+      type: "article",
+      images: [
+        {
+          url: siteConfig.ogImage,
+          width: 1200,
+          height: 630,
+          alt: page.data.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: page.data.title,
+      description: page.data.description ?? siteConfig.description,
+      images: [siteConfig.ogImage],
+    },
   }
 }

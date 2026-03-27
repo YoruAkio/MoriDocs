@@ -3,10 +3,12 @@ export const siteConfig = {
   productName: "Mori",
   description:
     "Documentation for Mori, the cross-platform Growtopia companion with bot management, item data, world state, and WebSocket events.",
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   githubUrl: "https://github.com/CLOEI/Mori",
   docsUrl: "/docs",
   docsSourceUrl: "https://github.com/CLOEI/Mori/blob/main/DOCS.md",
   rawDocsUrl: "https://raw.githubusercontent.com/CLOEI/Mori/main/DOCS.md",
+  ogImage: "/og-image.png",
   baseUrl: "http://localhost:3000",
   websocketUrl: "ws://localhost:3000/ws",
 } as const
@@ -15,15 +17,6 @@ export const landingMetrics = [
   { label: "HTTP endpoints", value: "7+" },
   { label: "WebSocket events", value: "13+" },
   { label: "Auth", value: "none" },
-] as const
-
-export const endpointHighlights = [
-  "GET /bots",
-  "POST /bots",
-  "GET /bots/{id}/state",
-  "POST /bots/{id}/cmd",
-  "GET /items",
-  "GET /items/names",
 ] as const
 
 export const eventHighlights = [
