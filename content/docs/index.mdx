@@ -1,6 +1,6 @@
 ---
 title: Overview
-description: Start here for Mori's API surface, WebSocket feed, and the upstream reference source.
+description: Start here for Mori's API surface and WebSocket feed.
 icon: book-open-text
 ---
 
@@ -9,7 +9,7 @@ icon: book-open-text
 Mori is a cross-platform Growtopia companion focused on bot control, world visibility, and browser-based management. The docs site keeps the structure simple:
 
 - a short overview page for orientation
-- a synced API reference page pulled from the upstream repository
+- an API reference page for the current surface
 
 ## Base transport
 
@@ -27,22 +27,6 @@ Mori is a cross-platform Growtopia companion focused on bot control, world visib
 - send movement, equipment, delay, and scripting commands
 - search the item database
 - subscribe to bot, world, player, inventory, and console events
-
-## Source of truth
-
-The full reference is synced from the upstream [`DOCS.md`](https://github.com/CLOEI/Mori/blob/main/DOCS.md).
-
-When Mori's API changes, run:
-
-```bash
-bun run docs:sync
-```
-
-Then regenerate the Fumadocs source if needed:
-
-```bash
-bun run docs:build-source
-```
 
 ## Next page
 
