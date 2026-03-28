@@ -12,8 +12,10 @@ description: State values and generic definitions
 | `connecting` | Initial state, attempting to connect |
 | `connected` | Connected to game server |
 | `in_world` | Logged in and inside a world |
-| `two_factor_auth` | Blocked by 2FA — retries after 120s |
-| `server_overloaded` | Server overloaded — retries after 30s |
+| `two_factor_auth` | Blocked by 2FA — retries after `twofa_secs` |
+| `server_overloaded` | Server overloaded — retries after `server_overload_secs` |
+| `too_many_logins` | Too many concurrent logins — retries after `too_many_logins_secs` |
+| `update_required` | Client update required — bot stops permanently |
 
 ### Coordinates
 
@@ -21,7 +23,10 @@ All `x`/`y` values are in **tile coordinates** (pixels ÷ 32). The bot's positio
 
 ### Default Delays
 
-| Delay | Default |
-|-------|---------|
-| `place_ms` | 500ms |
-| `walk_ms` | 500ms |
+| Delay | Default | Description |
+|-------|---------|-------------|
+| `place_ms` | 500ms | Delay between place/punch actions |
+| `walk_ms` | 500ms | Delay between walk/pathfind steps |
+| `twofa_secs` | 120s | Reconnect wait after 2FA block |
+| `server_overload_secs` | 30s | Reconnect wait after server overload |
+| `too_many_logins_secs` | 5s | Reconnect wait after too-many-logins rejection |
