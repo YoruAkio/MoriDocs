@@ -303,4 +303,16 @@ A console message was received (game chat, script output, etc.).
 }
 ```
 
+#### `BotUsername`
+The bot's GrowID was resolved from the server. Fired after `SetHasGrowID` is received — useful for ltoken bots whose username is unknown at spawn time.
+```json
+{
+  "event": "BotUsername",
+  "data": {
+    "bot_id": 1,
+    "username": "string"
+  }
+}
+```
+
 ---
