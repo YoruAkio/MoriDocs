@@ -222,7 +222,8 @@ Returns the full state of a bot.
     "global_playtime": 0,
     "awesomeness": 0
   },
-  "auto_collect": true
+  "auto_collect": true,
+  "auto_reconnect": true
 }
 ```
 
@@ -311,6 +312,36 @@ Configure action delays. `place_ms` and `walk_ms` are in milliseconds; the `*_se
 Enable or disable automatic collection of nearby dropped items.
 ```json
 { "type": "set_auto_collect", "enabled": true }
+```
+
+#### `set_auto_reconnect`
+Enable or disable automatic reconnection after a disconnect.
+```json
+{ "type": "set_auto_reconnect", "enabled": true }
+```
+
+#### `disconnect`
+Disconnect the bot from the current server. If auto-reconnect is enabled, the bot will reconnect automatically.
+```json
+{ "type": "disconnect" }
+```
+
+#### `reconnect`
+Force a reconnect. If the bot is currently connected, it disconnects first and reconnects via the normal disconnect handler. If already disconnected, reconnects immediately.
+```json
+{ "type": "reconnect" }
+```
+
+#### `accept_access`
+Accept a world lock access request from the nearest player. Wrenches the player and confirms both dialogs in sequence.
+```json
+{ "type": "accept_access" }
+```
+
+#### `warp`
+Warp the bot to a world by name. `id` is the door ID to enter through and defaults to an empty string (main door).
+```json
+{ "type": "warp", "name": "START", "id": "" }
 ```
 
 ---
